@@ -35,7 +35,7 @@ def parseData(dataInput):
                 # writing the data rows 
                 csvwriter.writerow(lineList)
         
-        # Definitions - need to capture all the lines per definition
+        # Definitions - TODO need to capture all the lines per definition
         if line.startswith('Defn:'):
             print(line)
         #print(line)
