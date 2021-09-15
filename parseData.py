@@ -15,6 +15,7 @@ def parseData(dataInput):
 
     # Read each line
     lines = openUrl.readlines()
+    # print(lines)
 
     # Close file
     openUrl.close()
@@ -23,6 +24,7 @@ def parseData(dataInput):
         # Remove extra characters, decode
         line = line.strip()
         line = line.decode()
+        print(line)
 
         # Dictionary words - if entire line is uppercase, write to CSV TODO get rid of brackets and ''
         if line.isupper():
@@ -50,5 +52,4 @@ def parseData(dataInput):
                 # writing the data rows 
                 csvwriter.writerow([wordList, defnList])
             #print(line)
-        #print(line)
     
