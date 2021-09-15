@@ -1,3 +1,5 @@
+#TODO clean this up by reducing number of times writing to the CSV file
+
 from urllib.request import urlopen
 import csv
 
@@ -22,9 +24,22 @@ def parseData(dataInput):
         line = line.strip()
         line = line.decode()
 
-        # Dictionary words - if entire line is uppercase, write to CSV TODO get rid of first line and text at end
+        # Dictionary words - if entire line is uppercase, write to CSV TODO get rid of brackets and ''
         if line.isupper():
-            lineList = line.split(maxsplit=0) #separates the words so there is one set per cell
+            wordList = line.split(maxsplit=0) #separates the words so there is one set per cell
+            #print(lineList)
+
+            # # write words to csv, first column
+            # with open(outputs.filename, 'a', newline='') as f:
+            #     # creating a csv writer object 
+            #     csvwriter = csv.writer(f) 
+
+            #     # writing the data rows 
+            #     csvwriter.writerow(wordList)
+        
+        # Definitions - TODO need to capture all the lines per definition
+        if line.startswith('Defn:'):
+            defnList = line.split(maxsplit=0) #separates the words so there is one set per cell
             #print(lineList)
 
             # write words to csv, first column
@@ -33,10 +48,7 @@ def parseData(dataInput):
                 csvwriter = csv.writer(f) 
 
                 # writing the data rows 
-                csvwriter.writerow(lineList)
-        
-        # Definitions - TODO need to capture all the lines per definition
-        if line.startswith('Defn:'):
-            print(line)
+                csvwriter.writerow([wordList, defnList])
+            #print(line)
         #print(line)
     
