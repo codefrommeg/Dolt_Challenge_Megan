@@ -25,7 +25,7 @@ def parseData(dataInput):
         # Dictionary words - if entire line is uppercase, write to CSV TODO get rid of first line and text at end
         if line.isupper():
             lineList = line.split(maxsplit=0) #separates the words so there is one set per cell
-            print(lineList)
+            #print(lineList)
 
             # write words to csv, first column
             with open(outputs.filename, 'a', newline='') as f:
@@ -34,5 +34,9 @@ def parseData(dataInput):
 
                 # writing the data rows 
                 csvwriter.writerow(lineList)
+        
+        # Definitions - need to capture all the lines per definition
+        if line.startswith('Defn:'):
+            print(line)
         #print(line)
     
