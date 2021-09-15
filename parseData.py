@@ -7,10 +7,6 @@ def parseData(dataInput):
     # Open URL text file
     openUrl = urlopen(dataInput) 
 
-    # # Read text file to string
-    # dataset = str(openUrl.read(), 'utf-8')
-    # # print(dataset)
-
     # Read each line
     lines = openUrl.readlines()
 
@@ -18,11 +14,11 @@ def parseData(dataInput):
     openUrl.close()
 
     for line in lines:
-        # Remove extra space decode
+        # Remove extra characters, decode
         line = line.strip()
         line = line.decode()
 
-        # If entire line is uppercase, write to CSV
+        # Dictionary words - if entire line is uppercase, write to CSV TODO get rid of first line and text at end
         if line.isupper():
             lineList = line.split(maxsplit=0) #separates the words so there is one set per cell
             print(lineList)
@@ -35,3 +31,4 @@ def parseData(dataInput):
                 # writing the data rows 
                 csvwriter.writerow(lineList)
         #print(line)
+    outputs.filename.close()

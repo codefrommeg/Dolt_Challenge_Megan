@@ -4,7 +4,6 @@
 # -- TODO need to get rid of 1st line and text at bottom.
 # -Megan Smith
 
-from urllib.request import urlopen
 import parseData
 import inputs
 
