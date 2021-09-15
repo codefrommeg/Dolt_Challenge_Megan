@@ -2,8 +2,12 @@ from urllib.request import urlopen
 import csv
 
 import outputs
+import clearCsv
 
 def parseData(dataInput):
+    # Opens and clears existing CSV file
+    clearCsv.clearCsv()
+
     # Open URL text file
     openUrl = urlopen(dataInput) 
 
@@ -27,8 +31,8 @@ def parseData(dataInput):
             with open(outputs.filename, 'a', newline='') as f:
                 # creating a csv writer object 
                 csvwriter = csv.writer(f) 
-        
+
                 # writing the data rows 
                 csvwriter.writerow(lineList)
         #print(line)
-    outputs.filename.close()
+    

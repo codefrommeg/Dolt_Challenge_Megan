@@ -2,12 +2,15 @@
  Webster’s Unabridged Dictionary to CSV
  DoltHub Challenge - Megan Smith - 09/14/2021
 
+ How to Use:
+    run the "challengeAccepted.py" file, then outputs should be in the "dictionary.csv" file
+
  Files:
     challengeAccepted.py - main file, run challengeAccepted.py
+    clearCsv.py - clears CSV file every run
     dictionary.csv - the CSV results
-    identifyWord.py
     inputs.py - input file path and field labels
-    outputs.py - outful CSV file name
+    outputs.py - output CSV file name
     parseData.py - loads and parses the data
 
 Notes:
